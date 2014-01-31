@@ -9,6 +9,23 @@
   sheet (or in Redmine Backlogs!) to 
   visualize the sprint.
 ******************************************/
+var RBLineHeightToggled = false;
+
+$(document).ready(function() {
+	$("div.links").prepend("<a id='togglelineheight'>toggleLineHeight();</a>");
+	
+	$("#togglelineheight").click( function() {
+		if (RBLineHeightToggled) {
+			RBLineHeightToggled = false;
+			$("#backlogs_container .stories .story .subject").css("height", "15px").css("white-space","nowrap");
+			$("#backlogs_container .stories .story").css("height", "26px");
+		} else {
+			RBLineHeightToggled = true;
+			$("#backlogs_container .stories .story .subject").css("height", "100%").css("white-space","normal");
+			$("#backlogs_container .stories .story").css("height", "53px");
+		}
+	});
+});
 
 RB.Backlog = RB.Object.create({
     
