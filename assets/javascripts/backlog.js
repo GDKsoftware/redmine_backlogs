@@ -67,6 +67,19 @@ RB.Backlog = RB.Object.create({
     
     // Handle New Story clicks
     j.find('.add_new_story').bind('mouseup', self.handleNewStoryClick);
+	
+	$("li.story").each( function() {
+		var typeofstory = $(this).find("div.tracker_id div.t").html();
+		var ahref = $(this).find("div.id a");
+			
+		if (typeofstory == "Bug") {
+			ahref.css("background-color", "#CC0000").css("color", "#ffffff");
+		} else if (typeofstory == "Feature") {
+			ahref.css("background-color", "#efe4b0").css("color", "#CC0000");
+		} else {
+			ahref.css("background-color", "#CCFFCC").css("color", "#CC0000");
+		}
+	});
   },
   
   dragComplete: function(event, ui) {
