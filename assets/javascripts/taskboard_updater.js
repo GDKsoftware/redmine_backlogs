@@ -40,6 +40,7 @@ RB.TaskboardUpdater = RB.Object.create(RB.BoardUpdater, {
     }
 
     target.$.effect("highlight", { easing: 'easeInExpo' }, 4000);
+	location.href = idPrefix + update.getID();
   },
   
   start: function(){
