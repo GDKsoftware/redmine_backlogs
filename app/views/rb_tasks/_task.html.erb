@@ -9,6 +9,7 @@
     <div class="v"><%= assignee_id_or_empty(task) %></div>
   </div>
   <div class="remaining_hours editable" fieldname="remaining_hours"><%= remaining_hours(task) %></div>
+  <div class="estimated_hours" fieldname="estimated_hours"><%= task.estimated_hours %></div>
   <div class="indicator"> </div>
   <div class="meta">
     <div class="story_id"><%= task.parent_id %></div>
